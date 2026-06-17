@@ -1,3 +1,15 @@
+// Hero Video Autoplay (mobile fallback)
+const heroVideo = document.getElementById('heroVideo');
+if (heroVideo) {
+  heroVideo.muted = true;
+  const playPromise = heroVideo.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      document.addEventListener('touchstart', () => heroVideo.play(), { once: true });
+    });
+  }
+}
+
 // Hamburger Menu
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
