@@ -196,6 +196,10 @@ nav {
   object-fit: cover;
   z-index: 1;
 }
+@media (max-width: 768px) {
+  .hero-video-bg { display: none; }
+  .hero-video-overlay { display: none; }
+}
 .hero-video-overlay {
   position: absolute;
   inset: 0;
